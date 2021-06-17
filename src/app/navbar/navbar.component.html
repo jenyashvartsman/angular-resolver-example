@@ -1,5 +1,19 @@
-<ul>
-  <li><a routerLink="posts">Posts</a></li>
-  <li><a [routerLink]="['post', 123]">Post 123</a></li>
-  <li><a routerLink="comments" [queryParams]="{postId: [123, 456]}">Comments</a></li>
-</ul>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" routerLink="">Angular Resolver Example</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="posts">Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['post', 1]">Post 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="comments" [queryParams]="{postId: [1, 2]}">Comments 1 & 2</a>
+      </li>
+    </ul>
+  </div>
+</nav>
