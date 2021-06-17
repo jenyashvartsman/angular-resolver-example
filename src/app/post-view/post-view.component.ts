@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post-view',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private actRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.actRoute.data.subscribe(data => {
+      console.log(data)
+    });
   }
 
 }
