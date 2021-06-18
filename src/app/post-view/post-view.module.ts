@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { PostViewComponent } from './post-view.component';
 import { RouterModule } from '@angular/router';
 import { PostResolver } from './post.resolver';
+import { PostsService } from '../api/posts.service';
+import { UsersService } from '../api/users.service';
 
 
 @NgModule({
@@ -15,12 +17,14 @@ import { PostResolver } from './post.resolver';
       path: '',
       component: PostViewComponent,
       resolve: {
-        postId: PostResolver
+        post: PostResolver
       }
     }])
   ],
   providers: [
-    PostResolver
+    PostResolver,
+    PostsService,
+    UsersService
   ]
 })
 export class PostViewModule {

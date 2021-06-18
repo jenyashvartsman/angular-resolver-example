@@ -11,7 +11,7 @@ export class PostsViewComponent implements OnInit {
 
   posts: PostModel[] = []
 
-  constructor(private actRoute: ActivatedRoute) { }
+  constructor(private readonly actRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.actRoute.data.subscribe(data => this.posts = data.posts);

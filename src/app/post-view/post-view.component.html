@@ -1,1 +1,37 @@
-<p>post-view works!</p>
+<div>
+  <!-- user -->
+  <div class="media border p-3">
+    <img src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+    <div class="media-body">
+      <h4>{{user ? user.name : '-'}} <small><i>{{user ? user.username : '-'}}6</i></small></h4>
+      <p>{{user ? user.email : '-'}}</p>
+    </div>
+  </div>
+
+  <hr/>
+
+  <!-- post -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <h4 class="card-title">{{post ? post.title : '-'}}</h4>
+      <p class="card-text">{{post ? post.body: '-'}}</p>
+    </div>
+  </div>
+
+  <!-- comments -->
+  <div id="accordion">
+
+    <div class="card" *ngFor="let comment of comments">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" [href]="'#comment-' + comment.id">
+          {{comment.email}} - {{comment.name}}
+        </a>
+      </div>
+      <div [id]="'comment-' + comment.id" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          {{comment.body}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

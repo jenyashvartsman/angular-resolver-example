@@ -10,6 +10,14 @@ export interface PostModel {
   body: string;
 }
 
+export interface PostCommentModel {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
+
 @Injectable()
 export class PostsService {
 
@@ -20,5 +28,13 @@ export class PostsService {
 
   getAllPosts(): Observable<PostModel[]> {
     return this.http.get<PostModel[]>(this.url);
+  }
+
+  getPost(id: number): Observable<PostModel> {
+    return this.http.get<PostModel>(`${this.url}/${id}`);
+  }
+
+  getPostComments(id: number): Observable<PostCommentModel[]> {
+    return this.http.get<PostCommentModel[]>(`${this.url}/${id}/comments`);
   }
 }
