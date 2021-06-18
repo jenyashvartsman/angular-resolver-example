@@ -1,0 +1,22 @@
+import { Injectable } from '@angular/core';
+import {
+  Resolve,
+  RouterStateSnapshot,
+  ActivatedRouteSnapshot
+} from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { PostModel, PostsService } from '../api/posts.service';
+import { catchError } from 'rxjs/operators';
+
+@Injectable()
+export class PostsResolver implements Resolve<PostModel[]> {
+
+  constructor(private readonly postsService: PostsService) {
+  }
+
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<PostModel[]> {
+    return this.postsService.getAllPosts().pipe(
+      catchError(() => of([]))
+    )
+  }
+}
