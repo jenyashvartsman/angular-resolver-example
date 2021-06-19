@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { PostResolver } from './post.resolver';
 import { PostsService } from '../api/posts.service';
 import { UsersService } from '../api/users.service';
+import { CommentsService } from '../api/comments.service';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { UsersService } from '../api/users.service';
   providers: [
     PostResolver,
     PostsService,
-    UsersService
+    UsersService,
+    CommentsService
   ]
 })
 export class PostViewModule {

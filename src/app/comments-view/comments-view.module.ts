@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { CommentsViewComponent } from './comments-view.component';
 import { RouterModule } from '@angular/router';
 import { CommentsResolver } from './comments.resolver';
+import { PostsService } from '../api/posts.service';
+import { CommentsService } from '../api/comments.service';
+import { CommentsPostsResolver } from './comments-posts.resolver';
 
 
 @NgModule({
@@ -15,12 +18,16 @@ import { CommentsResolver } from './comments.resolver';
       path: '',
       component: CommentsViewComponent,
       resolve: {
-        postIds: CommentsResolver
+        comments: CommentsResolver,
+        posts: CommentsPostsResolver
       }
     }])
   ],
   providers: [
-    CommentsResolver
+    CommentsResolver,
+    PostsService,
+    CommentsService,
+    CommentsPostsResolver
   ]
 })
 export class CommentsViewModule {

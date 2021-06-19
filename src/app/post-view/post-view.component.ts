@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PostCommentModel, PostModel, PostsService } from '../api/posts.service';
+import { PostModel } from '../api/posts.service';
 import { UserModel, UsersService } from '../api/users.service';
+import { CommentsService, PostCommentModel } from '../api/comments.service';
 
 @Component({
   selector: 'app-post-view',
@@ -16,7 +17,7 @@ export class PostViewComponent implements OnInit {
 
   constructor(private readonly actRoute: ActivatedRoute,
               private readonly userService: UsersService,
-              private readonly postsService: PostsService) {
+              private readonly commentsService: CommentsService) {
   }
 
   ngOnInit(): void {
@@ -36,7 +37,7 @@ export class PostViewComponent implements OnInit {
   }
 
   getPostComments(postId: number): void {
-    this.postsService.getPostComments(postId).subscribe(
+    this.commentsService.getPostsComments([postId]).subscribe(
       res => this.comments = res
     );
   }
