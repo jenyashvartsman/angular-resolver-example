@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PostViewComponent } from './post-view.component';
+import { PostViewComponent } from './view/post-view.component';
 import { RouterModule } from '@angular/router';
-import { PostResolver } from './post.resolver';
-import { PostsService } from '../api/posts.service';
-import { UsersService } from '../api/users.service';
-import { CommentsService } from '../api/comments.service';
+import { PostResolver } from './resolver/post.resolver';
+import { PostsService } from '../../api/posts.service';
+import { UsersService } from '../../api/users.service';
+import { CommentsService } from '../../api/comments.service';
 
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PostModel } from '../api/posts.service';
+import { PostModel } from '../../../api/posts.service';
 
 @Component({
   selector: 'app-posts-view',
@@ -25,5 +25,13 @@ export class PostsViewComponent implements OnInit {
   postChecked(event: any, postId: number): void {
     this.selectedPosts = event.target.checked ?
       [...this.selectedPosts, postId] : this.selectedPosts.filter(id => id !== postId);
+  }
+
+  toggleAllPosts(): void {
+    this.selectedPosts = this.isAllPostsSelected() ? [] : this.posts.map(post => post.id);
+  }
+
+  isAllPostsSelected(): boolean {
+    return this.selectedPosts.length === this.posts.length;
   }
 }

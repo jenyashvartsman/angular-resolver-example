@@ -1,0 +1,30 @@
+<div class="alert alert-success mb-3">
+  <strong>Seeing comments for posts</strong> {{getPostIdsString()}}
+</div>
+
+<div *ngFor="let post of posts" class="mb-3">
+  <table class="table table-hover" aria-describedby="comments">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="row" colspan="4">
+        {{post.id}} - {{post.title}}<br/><br/>
+        {{post.body}}
+      </th>
+    </tr>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Email</th>
+      <th scope="col">Name</th>
+      <th scope="col">body</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let comment of getCommentsByPost(post.id)">
+      <td>{{comment.id}}</td>
+      <td>{{comment.email}}</td>
+      <td>{{comment.name}}</td>
+      <td>{{comment.body}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

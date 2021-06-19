@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import {
-  Router, Resolve,
+  Resolve,
   RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { forkJoin, Observable, of } from 'rxjs';
-import { PostModel, PostsService } from '../api/posts.service';
+import { PostModel, PostsService } from '../../../api/posts.service';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
@@ -14,11 +14,6 @@ export class CommentsPostsResolver implements Resolve<PostModel[]> {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<PostModel[]> {
-
-    /*return this.postsService.getPost(Number(route.paramMap.get('id'))).pipe(
-      catchError(() => of(null))
-    );*/
-
     const postIds: number[] = route.queryParamMap.getAll('postId').map(postId => Number(postId));
     return forkJoin(
       postIds.map(postId => this.postsService.getPost(postId))

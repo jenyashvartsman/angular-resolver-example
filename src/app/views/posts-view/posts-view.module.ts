@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PostsViewComponent } from './posts-view.component';
+import { PostsViewComponent } from './view/posts-view.component';
 import { RouterModule } from '@angular/router';
-import { PostsService } from '../api/posts.service';
-import { PostsResolver } from './posts.resolver';
+import { PostsService } from '../../api/posts.service';
+import { PostsResolver } from './resolver/posts.resolver';
 import { FormsModule } from '@angular/forms';
 
 

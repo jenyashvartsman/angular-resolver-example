@@ -5,7 +5,7 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { PostModel, PostsService } from '../api/posts.service';
+import { PostModel, PostsService } from '../../../api/posts.service';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()

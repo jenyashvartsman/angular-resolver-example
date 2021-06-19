@@ -6,7 +6,7 @@ import {
 } from '@angular/router';
 import {  Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { CommentsService, PostCommentModel } from '../api/comments.service';
+import { CommentsService, PostCommentModel } from '../../../api/comments.service';
 
 @Injectable()
 export class CommentsResolver implements Resolve<PostCommentModel[]> {

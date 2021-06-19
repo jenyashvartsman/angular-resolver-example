@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarModule } from './navbar/navbar.module';
+import { NavbarModule } from './layout/navbar/navbar.module';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({

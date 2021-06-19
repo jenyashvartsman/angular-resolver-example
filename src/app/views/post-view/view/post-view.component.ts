@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PostModel } from '../api/posts.service';
-import { UserModel, UsersService } from '../api/users.service';
-import { CommentsService, PostCommentModel } from '../api/comments.service';
+import { PostModel } from '../../../api/posts.service';
+import { UserModel, UsersService } from '../../../api/users.service';
+import { CommentsService, PostCommentModel } from '../../../api/comments.service';
 
 @Component({
   selector: 'app-post-view',

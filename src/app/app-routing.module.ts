@@ -9,15 +9,15 @@ const routes: Routes = [
   },
   {
     path: 'posts',
-    loadChildren: () => import('./posts-view/posts-view.module').then(m => m.PostsViewModule)
+    loadChildren: () => import('./views/posts-view/posts-view.module').then(m => m.PostsViewModule)
   },
   {
     path: 'post/:id',
-    loadChildren: () => import('./post-view/post-view.module').then(m => m.PostViewModule)
+    loadChildren: () => import('./views/post-view/post-view.module').then(m => m.PostViewModule)
   },
   {
     path: 'comments',
-    loadChildren: () => import('./comments-view/comments-view.module').then(m => m.CommentsViewModule)
+    loadChildren: () => import('./views/comments-view/comments-view.module').then(m => m.CommentsViewModule)
   },
   {
     path: '**',
