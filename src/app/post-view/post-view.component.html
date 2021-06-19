@@ -3,8 +3,8 @@
   <div class="media border p-3">
     <img src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
     <div class="media-body">
-      <h4>{{user ? user.name : '-'}} <small><i>{{user ? user.username : '-'}}6</i></small></h4>
-      <p>{{user ? user.email : '-'}}</p>
+      <h4>{{user?.name}} <small><em>{{user?.username}}</em></small></h4>
+      <p>{{user?.email}}</p>
     </div>
   </div>
 
@@ -13,8 +13,8 @@
   <!-- post -->
   <div class="card mb-3">
     <div class="card-body">
-      <h4 class="card-title">{{post ? post.title : '-'}}</h4>
-      <p class="card-text">{{post ? post.body: '-'}}</p>
+      <h4 class="card-title">{{post?.title}}</h4>
+      <p class="card-text">{{post?.body}}</p>
     </div>
   </div>
 
