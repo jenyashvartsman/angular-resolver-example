@@ -9,11 +9,21 @@ import { PostModel } from '../api/posts.service';
 })
 export class PostsViewComponent implements OnInit {
 
-  posts: PostModel[] = []
+  posts: PostModel[] = [];
+  selectedPosts: number[] = [];
 
   constructor(private readonly actRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.actRoute.data.subscribe(data => this.posts = data.posts);
+  }
+
+  isPostChecked(postId: number): boolean {
+    return this.selectedPosts.includes(postId);
+  }
+
+  postChecked(event: any, postId: number): void {
+    this.selectedPosts = event.target.checked ?
+      [...this.selectedPosts, postId] : this.selectedPosts.filter(id => id !== postId);
   }
 }

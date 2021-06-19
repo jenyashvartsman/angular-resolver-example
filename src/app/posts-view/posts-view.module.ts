@@ -4,6 +4,7 @@ import { PostsViewComponent } from './posts-view.component';
 import { RouterModule } from '@angular/router';
 import { PostsService } from '../api/posts.service';
 import { PostsResolver } from './posts.resolver';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { PostsResolver } from './posts.resolver';
       resolve: {
         posts: PostsResolver
       }
-    }])
+    }]),
+    FormsModule
   ],
   providers: [
     PostsService,
